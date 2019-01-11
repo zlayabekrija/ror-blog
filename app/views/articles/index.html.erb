@@ -1,0 +1,20 @@
+
+<h1 class='text-center mt-3'>Listing articles</h1>
+<%= link_to fa_icon('plus-square',text: 'New Article') ,new_article_path,class: 'btn btn-default' %>
+  <div>
+  <% @articles.each do |article| %>
+    <div class="card mt-3">
+    <div class="card-body">
+    <h3 class="mt-3"><%= article.title%></h3>
+    <p class="mb-3"><%= article.text %></p>
+    <div class="text-center">
+    <%= link_to fa_icon('eye',text:'Show'), article_path(article),class: 'btn btn-primary' %>
+    <%= link_to fa_icon('edit',text:'Edit'), edit_article_path(article),class: 'btn btn-warning' %>
+    <%= link_to fa_icon('trash-alt',text:'Delete'), article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },class: 'btn btn-danger' %>
+    </div>
+    </div>
+    </div>
+  <% end %>
+  </div>

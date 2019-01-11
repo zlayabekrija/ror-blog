@@ -1,0 +1,13 @@
+<%= form_with(model: [ @article, @article.comments.build], local: true) do |form| %>
+  
+  <div class="form-group">
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter,class: 'form-control' %>
+    <%= form.label :body %><br>
+    <%= form.text_area :body,class: 'form-control' %>
+   <%= button_tag type: 'submit', class: "btn btn-primary my-2" do %>
+      <i class="fas fa-plus"></i> Create
+  <% end %>
+  </div>
+
+<% end %>
