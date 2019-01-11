@@ -16,7 +16,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: productiondatabasename
-  pool: 5
-  username: admin
-  password: admin
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  database: ror_blog_production
+  username: ror_blog
+  password: <%= ENV['ROR_BLOG_DATABASE_PASSWORD'] %>
+  timeout: 5000
