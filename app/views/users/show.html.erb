@@ -1,0 +1,14 @@
+<div class="my-3">
+<%= link_to fa_icon('edit',text:'Edit'), edit_user_path(@user),class: 'float-right btn btn-warning' %>
+<%= link_to fa_icon('chevron-left',text:'Back'), articles_path,class:'float-left btn btn-default' %>
+<div class="clearfix">
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<h3>Username :<strong><%= @user.name %></strong>
+</h3>
+ <p>Email : <%= @user.email %>
+</p>
+</div>
+</div>

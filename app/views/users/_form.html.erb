@@ -1,0 +1,28 @@
+<%= form_with model: @user, local: true do |form| %>
+ <div class="form-group">
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h4>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form.label :name  %>
+    <%= form.text_field :name,class: 'form-control' %>
+    <%= form.label :email %>
+    <%= form.email_field :email,class: 'form-control' %>
+    <%= form.label :password %>
+    <%= form.password_field :password,class: 'form-control' %>
+    <%= form.label 'Confirm Password' %>
+    <%= form.password_field :password_confirmation,class: 'form-control' %>
+     <%= button_tag type: 'submit', class: "btn btn-primary my-2" do %>
+      <i class="fas fa-plus"></i> Create
+  <% end %>
+ </div>
+<% end %>
