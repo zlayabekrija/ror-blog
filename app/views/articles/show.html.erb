@@ -11,8 +11,10 @@
 <div class="card-body">
 <h3><strong><%= @article.title %></strong>
 </h3>
+<p> Created by: <%= @article.user %></p> 
  <p> <%= @article.text %>
 </p>
+<small>Posted at:<%= @article.updated_at %></small> 
 </div>
 </div>
 <h4 class="text-center mt-3">Comments</h4>
