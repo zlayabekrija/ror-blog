@@ -1,8 +1,6 @@
-
 <h1 class='text-center mt-3'>Listing articles</h1>
-<%= link_to fa_icon('user-plus',text: 'Sign Up'),new_user_path,class: 'btn btn-default' %>
-<%= link_to fa_icon('sign-in-alt',text: 'Sign In'),'./login',class: 'btn btn-default' %>
 <%= link_to fa_icon('plus-square',text: 'New Article') ,new_article_path,class: 'btn btn-default' %>
+<%= render './layouts/buttons' %>
   <div>
   <% @articles.each do |article| %>
     <div class="card mt-3">
@@ -11,10 +9,12 @@
     <p class="mb-3"><%= article.text %></p>
     <div class="text-center">
     <%= link_to fa_icon('eye',text:'Show'), article_path(article),class: 'btn btn-primary' %>
+    <% if logged_in? %>
     <%= link_to fa_icon('edit',text:'Edit'), edit_article_path(article),class: 'btn btn-warning' %>
     <%= link_to fa_icon('trash-alt',text:'Delete'), article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' },class: 'btn btn-danger' %>
+    <% end %>
     </div>
     </div>
     </div>

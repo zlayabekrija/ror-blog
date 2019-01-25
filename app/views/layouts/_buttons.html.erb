@@ -1,0 +1,8 @@
+<% if logged_in? %>
+    <%= link_to fa_icon('sign-out-alt',text: 'Sign Out'),logout_path, method: :delete,class: 'btn btn-default float-right' %>
+     <%= link_to current_user.name.upcase, user_path(current_user.id), class:'float-right my-2' %>
+    <% else %>
+    <%= link_to fa_icon('sign-in-alt',text: 'Sign In'),login_path,class: 'btn btn-default float-right' %>
+     <%= link_to fa_icon('user-plus',text: 'Sign Up'),new_user_path,class: 'btn btn-default float-right' %>
+<% end %>
+   

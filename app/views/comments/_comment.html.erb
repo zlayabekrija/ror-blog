@@ -1,7 +1,9 @@
 <div class="card-body">
+<% if logged_in? %>
 <%= link_to fa_icon('trash-alt',style: 'color:red;font-size:1.25rem;'), [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } ,class: 'par-10'%>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= comment.commenter %>
