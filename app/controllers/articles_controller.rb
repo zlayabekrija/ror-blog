@@ -6,10 +6,21 @@ class ArticlesController < ApplicationController
     end
 
     def new
+      if logged_in?
+        @article = Article.new
+        else
+          flash[:danger] = 'Please Login'
+          redirect_to articles_path
+        end
         @article = Article.new
     end
     def edit
+        if logged_in?
         @article = Article.find(params[:id])
+        else
+          flash[:danger] = 'Please Login'
+          redirect_to articles_path
+        end
     end
     def create
         @article = Article.new(article_params)
@@ -42,8 +53,12 @@ class ArticlesController < ApplicationController
 
       def destroy
         @article = Article.find(params[:id])
+        if owner? @article.user
         @article.destroy
-       
+        flash[:success] = 'Article Deleted'
+        else
+          flash[:danger] = 'You are not an author'
+        end
         redirect_to articles_path
       end
 
