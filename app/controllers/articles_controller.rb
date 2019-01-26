@@ -27,13 +27,18 @@ class ArticlesController < ApplicationController
 
     def update
         @article = Article.find(params[:id])
-       
+       if owner? @article.user
         if @article.update(article_params)
+          flash[:success] = 'Updated'
           redirect_to @article
         else
           render 'edit'
         end
+       else
+        flash[:danger] = 'Unauthorized'
+        redirect_to articles_path
       end
+    end
 
       def destroy
         @article = Article.find(params[:id])

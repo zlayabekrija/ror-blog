@@ -10,7 +10,12 @@ class CommentsController < ApplicationController
     def destroy
         @article = Article.find(params[:article_id])
         @comment = @article.comments.find(params[:id])
-        @comment.destroy
+        if authorized? @comment.commenter
+          @comment.destroy
+          flash[:success] = "Comment deleted"
+        else
+          flash[:danger] = "Not authorized"
+        end
         redirect_to article_path(@article)
     end
      

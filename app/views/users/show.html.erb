@@ -12,3 +12,17 @@
 </p>
 </div>
 </div>
+ <% if @articles.count > 0 %>
+<div class="card">
+<div class="card-body">
+        <h3>Articles posted :</h3>
+        <% @articles.each do |article| %>
+        <%= link_to article.title, article_path(article) %>
+         <p><%= article.text %></p>
+         <small>Number of comments: <%= article.comments.count %></small>
+         <hr/>
+        <% end %>
+
+</div>
+</div>
+    <% end %>

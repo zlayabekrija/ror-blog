@@ -22,6 +22,8 @@
   <%= render @article.comments %>
  </div>
  <div class="container mt-3 w-75 m-auto">
+<% if logged_in? %>
 <h4 class="mt-3">Add a comment:</h4>
 <%= render 'comments/form' %>
+ <% end %>
  </div>
