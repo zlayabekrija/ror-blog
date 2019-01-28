@@ -41,10 +41,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if @user.name == current_user.name
     if @user.update(user_params)
       redirect_to @user
     else
       render 'edit'
+    end
+    else
+      flash[:danger] = 'Not yours'
+      redirect_to articles_path
     end
   end
 
