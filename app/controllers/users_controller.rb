@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+  include UsersHelper
   
   def index
-    redirect_to articles_path
+    if only_admin?
+      @users = User.paginate(page: params[:page])
+    else
+      flash[:danger] = 'Not authorized'
+      redirect_to articles_path
+    end
   end
 
   def new
@@ -54,11 +60,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id]).destroy
+    flash[:success] = 'User has been killed'
+    redirect_to users_path
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,:password_confirmation)
   end
-
 end

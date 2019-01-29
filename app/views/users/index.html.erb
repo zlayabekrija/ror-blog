@@ -1,0 +1,17 @@
+<h1>The List of Users</h1>
+<%= link_to fa_icon('chevron-left',text:'Back'), articles_path,class:'text-left btn btn-default w-100' %>
+<%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-md') %>
+ <%= page_entries_info @posts %>
+<% @users.each do |user| %>
+<div class="card mt-3">
+    <div class="card-body">
+         <%= link_to fa_icon('trash-alt',text:'Delete User'), user_path(user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },class: 'btn btn-danger float-right' %>  
+        <h3><%= user.name %></h3>
+        <h3><%= user.email %></h3>
+        <hr/>
+    </div>
+</div>
+<% end %>
+<%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-md mt-3') %>

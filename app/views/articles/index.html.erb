@@ -16,11 +16,11 @@
     <small>Posted at : <%= article.updated_at %></small>
     <div class="text-center">
     <%= link_to fa_icon('eye',text:'Show'), article_path(article),class: 'btn btn-primary' %>
-    <% if logged_in? %>
+    <% if correct_user?(article.user) %>
     <%= link_to fa_icon('edit',text:'Edit'), edit_article_path(article),class: 'btn btn-warning' %>
     <%= link_to fa_icon('trash-alt',text:'Delete'), article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' },class: 'btn btn-danger' %>
+              data: { confirm: 'Are you sure?' },class: 'btn btn-danger' %>     
     <% end %>
     </div>
     </div>

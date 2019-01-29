@@ -17,12 +17,14 @@
     <%= form.text_field :name,class: 'form-control' %>
     <%= form.label :email %>
     <%= form.email_field :email,class: 'form-control' %>
+ 
     <%= form.label :password %>
     <%= form.password_field :password,class: 'form-control' %>
     <%= form.label 'Confirm Password' %>
     <%= form.password_field :password_confirmation,class: 'form-control' %>
+   
      <%= button_tag type: 'submit', class: "btn btn-primary my-2" do %>
-      <i class="fas fa-plus"></i> Create
+      <i class="fas fa-plus"></i> <%= yield(:button_name) %>
   <% end %>
  </div>
 <% end %>

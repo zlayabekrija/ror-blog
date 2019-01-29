@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-   
 
     def index
         @articles = Article.all
@@ -61,9 +60,10 @@ class ArticlesController < ApplicationController
         end
         redirect_to articles_path
       end
-
+      
+    
     private
-  def article_params
+    def article_params
     params.require(:article).permit(:title, :text,:user)
   end
 end

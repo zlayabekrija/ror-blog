@@ -1,7 +1,7 @@
 <div class="my-3">
 <%= render './layouts/buttons' %>
 <%= link_to fa_icon('chevron-left',text:'Back'), articles_path,class:'float-left btn btn-default' %>
-<% if logged_in? %>
+<% if correct_user?(@article.user) %>
 <%= link_to fa_icon('edit',text:'Edit'), edit_article_path(@article),class: 'float-left btn btn-warning'%>
 <% end %>
 <div class="clearfix">
