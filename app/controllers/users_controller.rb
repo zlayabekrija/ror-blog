@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def index
     if only_admin?
-      @users = User.paginate(page: params[:page])
+      @users = User.paginate(page: params[:page],per_page: 10)
     else
       flash[:danger] = 'Not authorized'
       redirect_to articles_path
@@ -16,7 +16,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
- 
+    if User.all.count == 0
+      @user.user_level = 0
+    end
     if @user.save
         log_in @user
         flash[:success] = 'Welcome'

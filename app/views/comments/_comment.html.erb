@@ -1,9 +1,10 @@
 <div class="card-body">
-<% if logged_in? %>
+
 <div class="card-body">
+<% if correct_user?(@article.user) || only_admin? %>
 <%= link_to fa_icon('trash-alt',style: 'color:red;font-size:1.25rem;'), [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } ,class: 'float-right'%>
+               data: { confirm: 'Are you sure?' } ,class: 'float-right'%>             
 <% end %>
 <p>
   <strong>Name:</strong>
@@ -14,7 +15,9 @@
   <strong>Comment:</strong>
   <%= comment.body %>
  </p>
+ <small>Commented: <%= time_ago_in_words comment.created_at %></small>
 </div>
 <hr/>
+<div class="clearfix"></div>  
 </div>
 
