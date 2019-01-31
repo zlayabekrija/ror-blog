@@ -73,7 +73,7 @@ gem 'font_awesome5_rails'
 gem 'jquery-rails'
 group :production do 
 gem 'pg' 
-gem 'fog'
+
 end
 gem 'devise'
 
