@@ -20,8 +20,11 @@ class UsersController < ApplicationController
       @user.user_level = 0
     end
     if @user.save
-        log_in @user
-        flash[:success] = 'Welcome'
+      @user.send_activation_email
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Please check your email to activate your account."
+     
+
         redirect_to articles_path
       else
         render 'new'
@@ -66,6 +69,8 @@ class UsersController < ApplicationController
     flash[:success] = 'User has been killed'
     redirect_to users_path
   end
+  
+ 
 
   private
   def user_params

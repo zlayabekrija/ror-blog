@@ -64,7 +64,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate'          
 gem 'bootstrap-will_paginate'
-
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'bootstrap', '4.1.3'
 gem 'font-awesome-rails'
 gem 'font_awesome5_rails'
@@ -72,6 +73,7 @@ gem 'font_awesome5_rails'
 gem 'jquery-rails'
 group :production do 
 gem 'pg' 
+gem 'fog'
 end
 gem 'devise'
 
