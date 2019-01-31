@@ -4,9 +4,11 @@ class User < ApplicationRecord
     before_save { self.email = email.downcase }
     validates :name, length: {minimum: 5},format: /\w+/i,uniqueness: true
     validates :email, format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, uniqueness: { case_sensitive: false }
+    mount_uploader :picture, PictureUploader
+
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, confirmation: true
-
+    validate  :picture_size
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -66,5 +68,12 @@ class User < ApplicationRecord
       self.activation_digest = User.digest(activation_token)
 
     end
+
+    def picture_size
+      if picture.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
+
     
 end

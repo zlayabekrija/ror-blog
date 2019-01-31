@@ -7,3 +7,10 @@ position:absolute;
 right:15px;
 top: 15px;
 }
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}
