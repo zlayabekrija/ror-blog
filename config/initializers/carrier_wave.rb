@@ -8,6 +8,6 @@ if Rails.env.production?
       region:            ENV.fetch('AWS_REGION') # Required
   }
       config.storage    = :aws
-      config.aws_bucket = ENV.fetch('AWS_BUCKET')  
+      config.aws_bucket = ENV.fetch('AWS_BUCKET')   
     end
   end
