@@ -7,7 +7,7 @@ if Rails.env.production?
       secret_access_key: ENV.fetch('AWS_SECRET_KEY'),
       region:            ENV.fetch('AWS_REGION') # Required
   }
-      config.storage    = :aws
+      config.storage    = :fog
       config.aws_bucket = ENV.fetch('AWS_BUCKET')   
     end
   end
