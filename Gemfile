@@ -65,6 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate'          
 gem 'bootstrap-will_paginate'
 gem 'carrierwave'
+gem 'carrierwave-aws'
 gem 'mini_magick'
 gem 'bootstrap', '4.1.3'
 gem 'font-awesome-rails'
