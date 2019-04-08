@@ -75,7 +75,7 @@ GEM
     bootstrap-will_paginate (1.0.0)
       will_paginate
     builder (3.2.3)
-    byebug (11.0.0)
+    byebug (11.0.1)
     capybara (3.16.1)
       addressable
       mini_mime (>= 0.1.3)
