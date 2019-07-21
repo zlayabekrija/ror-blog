@@ -1,24 +1,15 @@
-# README
+# Ruby on Rails blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Simple blog built with Ruby on rails framework
 
-Things you may want to cover:
+##### Follow these steps to setup project locally :
 
-* Ruby version
+- [ ] clone the project using `git clone`
 
-* System dependencies
+- [ ] run `bundle install` in order to setup all dependencies 
 
-* Configuration
+- [ ] run `rails db:migrate` to setup database
 
-* Database creation
+- [ ] run `rails s` to run project locally in development environment
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*** feel free to fork, commit, comment and contribute in any way ***
