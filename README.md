@@ -12,4 +12,4 @@
 
 - [ ] run `rails s` to run project locally in development environment
 
-*** feel free to fork, commit, comment and contribute in any way ***
+***feel free to fork, commit, comment and contribute in any way***
