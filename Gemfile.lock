@@ -60,7 +60,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
-    autoprefixer-rails (9.7.6)
+    autoprefixer-rails (9.8.6.3)
       execjs
     aws-eventstream (1.1.0)
     aws-partitions (1.321.0)
@@ -82,7 +82,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap (4.5.0)
+    bootstrap (4.5.2)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -119,7 +119,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     crass (1.0.6)
     devise (4.7.2)
       bcrypt (~> 3.0)
@@ -132,7 +132,7 @@ GEM
     execjs (2.7.0)
     faker (2.13.0)
       i18n (>= 1.6, < 2)
-    ffi (1.12.2)
+    ffi (1.13.1)
     fog-aws (3.6.5)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -156,7 +156,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.3)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.11.0)
       mini_magick (>= 4.9.5, < 5)
@@ -173,7 +173,7 @@ GEM
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.6.0)
+    loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -188,7 +188,7 @@ GEM
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.14.2)
     msgpack (1.3.3)
     multi_json (1.14.1)
     nio4r (2.5.2)
@@ -242,7 +242,7 @@ GEM
     rubyzip (2.0.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -288,7 +288,7 @@ GEM
     will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.3.1)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
@@ -296,7 +296,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.13)
   bootsnap (>= 1.1.0)
-  bootstrap (= 4.5.0)
+  bootstrap (= 4.5.2)
   bootstrap-will_paginate
   byebug
   capybara (>= 2.15)

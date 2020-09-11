@@ -67,7 +67,7 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'mini_magick'
-gem 'bootstrap', '4.5.0'
+gem 'bootstrap', '4.5.2'
 gem 'font-awesome-rails'
 gem 'font_awesome5_rails'
 #gem "aws-sdk-s3", require: false
